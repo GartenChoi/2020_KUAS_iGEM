@@ -11,15 +11,15 @@ silver
   
 gold  
 - [x] Science Communication         https://2020.igem.org/Team:KUAS_Korea/Education
-- [ ]  Project Modeling             https://2020.igem.org/Team:KUAS_Korea/Model
+- [ ] Project Modeling              https://2020.igem.org/Team:KUAS_Korea/Model
 - [x] (Integrated)Human Practices   https://2020.igem.org/Team:KUAS_Korea/Human_Practices
 
 필수는 아님
 - [ ] Home                          https://2020.igem.org/Team:KUAS_Korea
-- [ ]                               https://2020.igem.org/Team:KUAS_Korea/Team
-- [ ]                               https://2020.igem.org/Team:KUAS_Korea/Design
-- [ ]                               https://2020.igem.org/Team:KUAS_Korea/Experiments
-- [ ]                               https://2020.igem.org/Team:KUAS_Korea/Notebook
-- [ ]                               https://2020.igem.org/Team:KUAS_Korea/Results
-- [x]                               https://2020.igem.org/Team:KUAS_Korea/Safety
-- [ ]                               https://2020.igem.org/Team:KUAS_Korea/Parts
+- [ ] Team                          https://2020.igem.org/Team:KUAS_Korea/Team
+- [ ] Design                        https://2020.igem.org/Team:KUAS_Korea/Design
+- [ ] Experiments                   https://2020.igem.org/Team:KUAS_Korea/Experiments
+- [ ] Notebook                      https://2020.igem.org/Team:KUAS_Korea/Notebook
+- [ ] Results                       https://2020.igem.org/Team:KUAS_Korea/Results
+- [x] Safety                        https://2020.igem.org/Team:KUAS_Korea/Safety
+- [ ] Parts                         https://2020.igem.org/Team:KUAS_Korea/Parts
