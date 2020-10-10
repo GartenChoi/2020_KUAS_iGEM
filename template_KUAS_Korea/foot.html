@@ -79,6 +79,15 @@
                 offset:'100%'
             })
         })
+        var target = window.location.hash;
+
+        if (target){
+            var $target = $(target);
+            $('html, body').stop().animate(
+                {'scrollTop': $target.offset().top - 60},
+                600
+            )
+        }
     })
 </script>
 </html>
