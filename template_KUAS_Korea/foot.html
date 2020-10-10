@@ -1,0 +1,84 @@
+<html>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/jquery.waypoints.min.js" integrity="sha512-CEiA+78TpP9KAIPzqBvxUv8hy41jyI3f2uHi7DGp/Y/Ka973qgSdybNegWFciqh6GrN2UePx2KkflnQUbUhNIA==" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js" integrity="sha512-bPs7Ae6pVvhOSiIcyUClR7/q2OAsRiovw4vAkX+zJbw3ShAeeqezq50RIIcIURq7Oa20rW2n2q+fyXBNcU9lrw==" crossorigin="anonymous"></script>
+
+<script>
+    $(document).ready(function(){
+        if ($('.nav-menu').length) {
+            var $mobile_nav = $('.nav-menu').clone().prop({class: 'mobile-nav d-lg-none'});
+            $('body').append($mobile_nav);
+            $('body').prepend('<button type="button" class="mobile-nav-toggle d-lg-none"><i class="icofont-navigation-menu"></i></button>');
+            $('body').append('<div class="mobile-nav-overly"></div>');
+            $(document).on('click', '.mobile-nav-toggle', function(e) {
+                $('body').toggleClass('mobile-nav-active');
+                $('.mobile-nav-toggle i').toggleClass('icofont-navigation-menu icofont-close');
+                $('.mobile-nav-overly').toggle();
+            });
+
+            $(document).on('click', '.mobile-nav .drop-down > a', function(e) {
+                e.preventDefault();
+                $(this).next().slideToggle(300);
+                $(this).parent().toggleClass('active');
+            });
+
+            $(document).click(function(e) {
+                var container = $(".mobile-nav, .mobile-nav-toggle");
+                if (!container.is(e.target))
+                    if(container.has(e.target).length === 0)
+                        if ($('body').hasClass('mobile-nav-active')) {
+                            $('body').removeClass('mobile-nav-active');
+                            $('.mobile-nav-toggle i').toggleClass('icofont-navigation-menu icofont-close');
+                            $('.mobile-nav-overly').fadeOut();
+                        }
+            });
+        } else if ($(".mobile-nav, .mobile-nav-toggle").length) {
+            $(".mobile-nav, .mobile-nav-toggle").hide();
+        }
+
+        // Navigation active state on scroll
+        var nav_sections = $('section');
+        var main_nav = $('.nav-menu, #mobile-nav');
+
+        $(window).on('scroll', function() {
+            var cur_pos = $(this).scrollTop() + 200;
+
+            nav_sections.each(function() {
+                var top = $(this).offset().top, bottom = top + $(this).outerHeight();
+                if (cur_pos >= top) {
+                    if (cur_pos <= bottom) {
+                        main_nav.find('li').removeClass('active');
+                        main_nav.find('a[href="#' + $(this).attr('id') + '"]').parent('li').addClass('active');
+                    }
+                }
+                if (cur_pos < 300) {
+                    $(".nav-menu ul:first li:first").addClass('active');
+                }
+            });
+        });
+
+        // Toggle .header-scrolled class to #header when page is scrolled
+        $(window).scroll(function() {
+            if ($(this).scrollTop() > 100) {
+                $('#header').addClass('header-scrolled');
+            } else {
+                $('#header').removeClass('header-scrolled');
+            }
+        });
+
+        if ($(window).scrollTop() > 100) {
+            $('#header').addClass('header-scrolled');
+        }
+
+        $('.waypoint').each(function(index, item) {
+            $(item).waypoint({
+                handler: function(direction) {
+                    $(item).addClass('waypoint-toggled')
+                },
+                offset:'100%'
+            })
+        })
+    })
+</script>
+</html>
